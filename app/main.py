@@ -17,5 +17,4 @@ app.add_middleware(
 
 @app.get("/video")
 def hello():
-
     return {"message": "테스트"}
