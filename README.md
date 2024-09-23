@@ -2,7 +2,8 @@
 
 - fastapi
 - pytube (pytubefix)
--
+- python-ffmpeg
+- Wisper
 
 ## 사용법
 
