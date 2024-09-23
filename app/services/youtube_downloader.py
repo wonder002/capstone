@@ -4,7 +4,7 @@ from pytubefix.cli import on_progress
 import os
 import time 
 
-def download_video(youtube_url: str, download_path: str = "downloads/") -> str:
+def download_video(youtube_url: str) -> str:
     yt = YouTube(youtube_url.strip(), on_progress_callback = on_progress)
 
     video_title = yt.title
@@ -13,6 +13,7 @@ def download_video(youtube_url: str, download_path: str = "downloads/") -> str:
     print(f"비디오 제목: {video_title}")
     print(f"비디오 ID: {video_id}")
 
+    download_path: str = "downloads/mp4/"
     filename = f"{video_id}.mp4"
     file_path = os.path.join(download_path, filename)
     
@@ -31,4 +32,4 @@ def download_video(youtube_url: str, download_path: str = "downloads/") -> str:
         print("비디오 다운로드 완료")
         print(f"다운로드 실행 시간: {elapsed_time:.2f} 초")
        
-    return file_path
+    return video_id
