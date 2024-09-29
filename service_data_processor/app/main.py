@@ -1,10 +1,9 @@
 from fastapi import FastAPI, HTTPException, Request
 from starlette.middleware.cors import CORSMiddleware
-import logging
 import uvicorn
 from fastapi.responses import JSONResponse
 import logging
-from app.routes import video_routes
+from service_data_processor.app.routes import video_routes
 
 app = FastAPI(
     title="YouTube Video Processing Service",

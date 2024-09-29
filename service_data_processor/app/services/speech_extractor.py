@@ -1,6 +1,6 @@
 import whisper
 import ffmpeg
-from app.utils.video_util import VideoUtil
+from service_data_processor.app.utils.video_util import VideoUtil
 import time 
 
 def extract_audio_from_video(video_path: str, audio_path: str):

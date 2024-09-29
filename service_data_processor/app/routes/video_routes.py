@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.workflows.process_video import process_video
-from app.dto.video_dto import VideoProcessRequest
+from service_data_processor.app.workflows.process_video import process_video
+from service_data_processor.app.dto.video_dto import VideoProcessRequest
 from starlette.responses import JSONResponse
 
 router = APIRouter()
