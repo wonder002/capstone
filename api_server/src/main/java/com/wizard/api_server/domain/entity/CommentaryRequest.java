@@ -4,7 +4,6 @@ import com.wizard.api_server.domain.RequestStatus;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.Instant;

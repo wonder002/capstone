@@ -1,8 +1,5 @@
 package com.wizard.api_server.kafka.commentarylistener;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wizard.api_server.repository.CommentaryRequestRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -14,13 +11,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class KafkaCommentaryResultConsumer {
 
-    private ObjectMapper objectMapper;
-
-    private CommentaryRequestRepository commentaryRequestRepository;
-
-    public KafkaCommentaryResultConsumer(ObjectMapper objectMapper, CommentaryRequestRepository commentaryRequestRepository) {
-        this.objectMapper = objectMapper;
-        this.commentaryRequestRepository = commentaryRequestRepository;
+    public KafkaCommentaryResultConsumer() {
     }
 
     /**
@@ -32,7 +23,6 @@ public class KafkaCommentaryResultConsumer {
     public void consume(String message) {
         try {
             // 메시지를 JSON으로 파싱
-            JsonNode jsonNode = objectMapper.readTree(message);
 
             // requestId와 최종 트랜스크립션 텍스트 추출
 

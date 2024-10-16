@@ -17,7 +17,7 @@ public class KafkaRequestProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value("${kafka.topic.request}")
+    @Value("${kafka.topic.transcription-requests}")
     private String requestTopic;
 
     public KafkaRequestProducer(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {

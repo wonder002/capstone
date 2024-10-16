@@ -38,10 +38,12 @@ public class CommentaryRequestService {
             // DTO를 엔티티로 매핑
             CommentaryRequest request = CommentaryRequestMapper.INSTANCE.toEntity(dto);
             CommentaryRequest savedRequest = commentaryRequestRepository.save(request);
+            log.info("comment request saved: {}", savedRequest.getRequestId());
 
             // Kafka로 초기 메시지 발행
             CommentaryRequestMessage requestMessage = CommentaryRequestMapper.INSTANCE.toMessageDto(savedRequest);
             kafkaRequestProducer.sendMessage(requestMessage);
+            log.info("comment request produced: {}", savedRequest.getRequestId());
 
             // 성공 시 requestId 반환
             return savedRequest.getRequestId();
